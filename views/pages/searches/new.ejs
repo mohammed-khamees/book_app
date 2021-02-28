@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book-app</title>
+
+        <!-- favicon -->
+        <link rel="shortcut icon" href="https://www.freeiconspng.com/uploads/book-icon--icon-search-engine-6.png"
+            type="image/x-icon">
+
+        <!-- style -->
+        <link rel="stylesheet" href="../styles/reset.css">
+        <link rel="stylesheet" href="../styles/base.css">
+        <link rel="stylesheet" href="../styles/modules.css">
+        <link rel="stylesheet" href="../styles/layout.css">
+
+    </head>
+
+    <body>
+        <header>
+            <h2>Best Books</h2>
+            <nav>
+                <ul>
+                    <li><a href="/">Home Searches</a></li>
+                    <li><a href="/searches/new">Search from API Books</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="title">
+                <h3>Search by Title or Author</h3>
+            </div>
+            <div class="search">
+                <form action="/seaches/new" method="get">
+                    <input type="text" name="search" id="search" placeholder="Enter a title or author">
+
+                    <label for="title">
+                        <span>Title</span>
+                        <input type="radio" name="sort" id="title" value="title">
+                    </label>
+
+                    <label for="author">
+                        <span>Author</span>
+                        <input type="radio" name="sort" id="author" value="author">
+                    </label>
+
+                    <input type="submit" value="Search the Google Books API">
+                </form>
+            </div>
+        </main>
+        <footer>
+            <ul>
+                <li>#</li>
+                <li>#</li>
+                <li>#</li>
+                <li>#</li>
+            </ul>
+        </footer>
+    </body>
+
+</html>
