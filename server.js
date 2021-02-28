@@ -19,7 +19,7 @@ app.set('view engine', 'ejs');
 
 //Routes
 
-//test route
+//home route
 app.get('/', (req, res) => {
 	res.render('pages/index');
 });
@@ -29,7 +29,7 @@ app.get('/searches/new', (req, res) => {
 	res.render('pages/searches/new');
 });
 
-//searches rout
+//searches route
 app.post('/searches', (req, res) => {
 	let search = req.body.search;
 	let sort = req.body.sort;
@@ -42,10 +42,13 @@ app.post('/searches', (req, res) => {
 			return new Book(item.volumeInfo);
 		});
 
-		// res.send(book);
-
 		res.render('pages/searches/searches', { booksList: book });
 	});
+});
+
+//error route
+app.get('*', (req, res) => {
+	res.render('pages/error');
 });
 
 //contructors

@@ -1,3 +1,35 @@
-body {
-	background-color: red;
+/* Global */
+
+* {
+	box-sizing: border-box;
 }
+
+:root {
+	--mainColor: rgb(0, 0, 0);
+	--secondColor: rgb(74, 74, 74);
+	--thirdColor: rgb(155, 155, 155);
+	--forthColor: rgb(216, 216, 216);
+	--fifthColor: rgb(255, 255, 255);
+	--mainFont: 'Roboto', sans-serif;
+	--mainTrasition: all 0.3s ease-in-out;
+}
+
+html {
+	scroll-behavior: smooth;
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	background-color: var(--thirdColor);
+	font-family: var(--mainFont);
+	height: 100%;
+	width: 100%;
+	display: table;
+	table-layout: fixed;
+	margin: 0 auto;
+}
+
+
+
+
