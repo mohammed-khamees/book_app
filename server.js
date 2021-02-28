@@ -18,8 +18,15 @@ app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
 //Routes
+
+//test route
 app.get('/hello', (req, res) => {
-	res.render('./pages/index');
+	res.render('pages/index');
+});
+
+//searches/new route
+app.get('/searches/new', (req, res) => {
+	res.render('pages/searches/new');
 });
 
 // listen
