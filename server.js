@@ -20,7 +20,7 @@ app.set('view engine', 'ejs');
 //Routes
 
 //test route
-app.get('/hello', (req, res) => {
+app.get('/', (req, res) => {
 	res.render('pages/index');
 });
 
@@ -28,6 +28,37 @@ app.get('/hello', (req, res) => {
 app.get('/searches/new', (req, res) => {
 	res.render('pages/searches/new');
 });
+
+//searches rout
+app.post('/searches', (req, res) => {
+	let search = req.body.search;
+	let sort = req.body.sort;
+
+	let url = `https://www.googleapis.com/books/v1/volumes?q=${search}+in${sort}`;
+
+	superagent.get(url).then((results) => {
+		let data = results.body.items;
+		let book = data.map((item) => {
+			return new Book(item.volumeInfo);
+		});
+
+		// res.send(book);
+
+		res.render('pages/searches/searches', { booksList: book });
+	});
+});
+
+//contructors
+function Book(data) {
+	this.image = data.imageLinks.thumbnail
+		? data.imageLinks.thumbnail
+		: `https://i.imgur.com/J5LVHEL.jpg`;
+	this.title = data.title ? data.title : 'No Title';
+	this.description = data.description
+		? data.description
+		: 'No description for this book';
+	this.author = data.authors ? data.authors.join(' ') : 'Author is Unknown';
+}
 
 // listen
 const PORT = process.env.PORT || 3030;

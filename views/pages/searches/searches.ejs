@@ -30,26 +30,22 @@
             </nav>
         </header>
         <main>
-            <div class="title">
-                <h3>Search by Title or Author</h3>
-            </div>
-            <div class="search">
-                <form action="/searches" method="POST">
-                    <input type="text" name="search" id="search" placeholder="Enter a title or author">
-
-                    <label for="title">
-                        <span>Title</span>
-                        <input type="radio" name="sort" id="title" value="title">
-                    </label>
-
-                    <label for="author">
-                        <span>Author</span>
-                        <input type="radio" name="sort" id="author" value="author">
-                    </label>
-
-                    <input type="submit" value="Search the Google Books API">
-                </form>
-            </div>
+            <% booksList.forEach(book=> {%>
+                <div class="card">
+                    <div class="img-container">
+                        <img src=<%=book.image %> alt="book">
+                    </div>
+                    <h3>
+                        <%=book.title %>
+                    </h3>
+                    <p>
+                        <%=book.description %>
+                    </p>
+                    <p>
+                        <%=book.author %>
+                    </p>
+                </div>
+                <% }); %>
         </main>
         <footer>
             <ul>
@@ -59,6 +55,7 @@
                 <li>#</li>
             </ul>
         </footer>
+
     </body>
 
 </html>
