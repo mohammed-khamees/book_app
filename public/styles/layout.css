@@ -1,0 +1,101 @@
+/* Global */
+
+header {
+	display: table-row;
+	width: 100%;
+}
+
+main {
+	display: table-row;
+	height: 100%;
+}
+
+footer {
+	display: table-row;
+	width: 100%;
+}
+
+/* /////////////////////////////////////////////////////////////////////// */
+
+/* header for all pages */
+header {
+	height: 90px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.header {
+	width: 90%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 2.2rem;
+	letter-spacing: 0.1rem;
+}
+
+nav {
+	position: absolute;
+	top: 90px;
+	left: 0;
+	width: 100%;
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.5rem;
+	text-align: center;
+	font-weight: 500;
+	letter-spacing: 0.2rem;
+	transition: var(--mainTrasition);
+}
+
+nav li {
+	padding: 0.5rem 0;
+}
+
+.fa-bars {
+	cursor: pointer;
+}
+
+/* end of header for all pages */
+
+/* /////////////////////////////////////////////////////////////////////// */
+
+/* main for all pages */
+
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+/* end of main for all pages */
+
+/* footer for all pages */
+
+footer {
+	height: 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+footer ul {
+	width: 90%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+footer ul li a {
+	font-size: 2rem;
+}
+
+/* end of footer for all pages */

@@ -1,0 +1,132 @@
+/* Global */
+
+a {
+	color: var(--mainColor);
+}
+
+/* /////////////////////////////////////////////////////////////////////// */
+
+/* header for all pages */
+header {
+	background-color: var(--mainColor);
+	color: var(--fifthColor);
+}
+
+nav {
+	background-color: var(--forthColor);
+}
+
+/* end of header for all pages */
+
+/* /////////////////////////////////////////////////////////////////////// */
+
+/* main for all pages */
+
+main {
+	color: var(--fifthColor);
+}
+
+/* end of main for all pages */
+
+/* footer for all pages */
+
+footer {
+	background-color: var(--mainColor);
+}
+
+footer ul li a {
+	color: var(--secondColor);
+}
+
+/* end of footer for all pages */
+
+/* /////////////////////////////////////////////////////////////////////// */
+
+/* home page */
+
+/* main */
+
+.title {
+	background-color: var(--secondColor);
+}
+/* end of main */
+
+/* end of home page */
+
+/* /////////////////////////////////////////////////////////////////////// */
+
+/* error page */
+
+/* main */
+
+.title {
+	background-color: var(--secondColor);
+}
+
+/* end of main */
+
+/* end of error page */
+
+/* /////////////////////////////////////////////////////////////////////// */
+
+/* search/new page */
+
+/* main */
+
+.title {
+	background-color: var(--secondColor);
+}
+
+#search::placeholder {
+	color: var(--mainColor);
+}
+
+.radio {
+	background-color: var(--forthColor);
+	color: var(--fifthColor);
+}
+
+.radio span {
+	color: var(--mainColor);
+}
+
+.submit {
+	background-color: var(--mainColor);
+	color: var(--fifthColor);
+}
+
+/* end of main */
+
+/* end of search/new page */
+
+/* /////////////////////////////////////////////////////////////////////// */
+
+/* searches page */
+
+/* main */
+
+.title {
+	background-color: var(--secondColor);
+}
+
+.card {
+	background-color: var(--forthColor);
+}
+
+.book-title {
+	color: var(--fifthColor);
+}
+
+.author {
+	color: var(--mainColor);
+}
+
+.desc {
+	color: var(--mainColor);
+}
+
+/* end of main */
+
+/* end of searches page */
+
+/* /////////////////////////////////////////////////////////////////////// */
