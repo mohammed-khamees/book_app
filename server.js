@@ -5,10 +5,14 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 const superagent = require('superagent');
+const pg = require('pg');
 
 // app setup
 const app = express();
 app.use(cors());
+
+//databas setup
+const client = new pg.Client(process.env.DATABASE_URL);
 
 // to access static file
 app.use(express.static('./public'));
@@ -21,7 +25,16 @@ app.set('view engine', 'ejs');
 
 //home route
 app.get('/', (req, res) => {
-	res.render('pages/index');
+	let SQL = `SELECT * FROM books;`;
+
+	client
+		.query(SQL)
+		.then((results) => {
+			res.render('pages/index', { booksList: results.rows });
+		})
+		.catch((error) => {
+			console.log('Error: ', error);
+		});
 });
 
 //searches/new route
@@ -46,6 +59,49 @@ app.post('/searches', (req, res) => {
 	});
 });
 
+//get one book route
+app.get('/book/:id', (req, res) => {
+	let SQL = `SELECT * FROM books WHERE id=${req.params.id};`;
+
+	client
+		.query(SQL)
+		.then((results) => {
+			res.render('pages/books/detail', { book: results.rows[0] });
+		})
+		.catch((error) => {
+			console.log('Error: ', error);
+		});
+});
+
+//addbook to book shelf
+app.post('/books', (req, res) => {
+	let { image, title, author, description } = req.body;
+	let SQL = `INSERT INTO books (image, title, author, description) VALUES($1, $2, $3, $4) RETURNING id;`;
+	let safeValues = [image, title, author, description];
+	let SQL2 = `SELECT * FROM books WHERE title=$1;`;
+	let value = [title];
+
+	client
+		.query(SQL2, value)
+		.then((results) => {
+			if (results.rows[0]) {
+				res.redirect(`/book/${results.rows[0].id}`);
+			} else {
+				client
+					.query(SQL, safeValues)
+					.then((results) => {
+						res.redirect(`/book/${results.rows[0].id}`);
+					})
+					.catch((error) => {
+						console.log('Error: ', error);
+					});
+			}
+		})
+		.catch((error) => {
+			console.log('Error: ', error);
+		});
+});
+
 //error route
 app.get('*', (req, res) => {
 	res.render('pages/error');
@@ -65,6 +121,9 @@ function Book(data) {
 
 // listen
 const PORT = process.env.PORT || 3030;
-app.listen(PORT, () => {
-	console.log(`http://localhost:${PORT}`);
+
+client.connect().then(() => {
+	app.listen(PORT, () => {
+		console.log(`http://localhost:${PORT}`);
+	});
 });
