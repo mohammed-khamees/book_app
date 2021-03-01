@@ -12,7 +12,12 @@ const app = express();
 app.use(cors());
 
 //databas setup
-const client = new pg.Client(process.env.DATABASE_URL);
+// const client = new pg.Client(process.env.DATABASE_URL);
+
+const client = new pg.Client({
+	connectionString: process.env.DATABASE_URL,
+	ssl: { rejectUnauthorized: false },
+});
 
 // to access static file
 app.use(express.static('./public'));
