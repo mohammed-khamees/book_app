@@ -49,6 +49,11 @@ footer ul li a {
 .title {
 	background-color: var(--secondColor);
 }
+
+.view {
+	background-color: var(--mainColor);
+	color: var(--fifthColor);
+}
 /* end of main */
 
 /* end of home page */
@@ -123,6 +128,11 @@ footer ul li a {
 
 .desc {
 	color: var(--mainColor);
+}
+
+.select {
+	background-color: var(--mainColor);
+	color: var(--fifthColor);
 }
 
 /* end of main */
