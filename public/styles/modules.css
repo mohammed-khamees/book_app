@@ -121,11 +121,14 @@ a {
 
 .submit {
 	width: 100%;
-	height: 5rem;
+	height: 4rem;
 	font-size: 1.5rem;
 	letter-spacing: 0.1rem;
 	border-radius: 0.5rem;
 	cursor: pointer;
+	margin: 0 auto 3rem;
+	padding: 0 0.7rem;
+	border: none;
 }
 
 /* end of main */
@@ -158,7 +161,7 @@ a {
 
 .card {
 	width: 25rem;
-	height: 40rem;
+	height: 50rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -187,6 +190,7 @@ a {
 	margin: 1rem auto;
 	text-align: center;
 	font-size: 1.5rem;
+	width: 90%;
 }
 
 .author {
@@ -223,3 +227,24 @@ a {
 /* end of searches page */
 
 /* /////////////////////////////////////////////////////////////////////// */
+
+/* detail page */
+
+/* main */
+
+.update {
+	width: 55%;
+	height: 5rem;
+	margin: 0 auto 1rem;
+	font-size: 1.5rem;
+	letter-spacing: 0.1rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	text-align: center;
+	padding-top: 1rem;
+	font-weight: normal;
+}
+
+/* end of main */
+
+/* end of detail page */
