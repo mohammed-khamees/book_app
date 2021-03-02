@@ -17,21 +17,21 @@
                             <div class="card">
                                 <div class="img-container">
                                     <img src=<%=book.image %> alt="book" class='img'>
-                                    <input type="hidden" name="image" value=<%=book.image %> >
+                                    <input type="hidden" name="image" value="<%=book.image %>" >
                                 </div>
                                 <h3 class="book-title">
                                     <%=book.title %>
-                                        <input type="hidden" name="title" value=<%=book.title %> >
+                                        <input type="hidden" name="title" value="<%=book.title %>" >
                                 </h3>
                                 <p class="author">
                                     <em>
                                         <%=book.author %>
-                                            <input type="hidden" name="author" value=<%=book.author %> >
+                                            <input type="hidden" name="author" value="<%=book.author %>" >
                                     </em>
                                 </p>
                                 <p class='desc'>
                                         <%=book.description %>
-                                            <input type="hidden" name="description" value=<%=book.description %>>
+                                            <input type="hidden" name="description" value="<%=book.description %>">
                                 </p>
 
                                 <input type="submit" value="Select this Book" class="select">
