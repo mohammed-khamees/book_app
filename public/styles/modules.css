@@ -248,3 +248,34 @@ a {
 /* end of main */
 
 /* end of detail page */
+
+/* /////////////////////////////////////////////////////////////////////// */
+
+/* detail page */
+
+/* main */
+
+#image,
+#booktitle,
+#bookauthor,
+#description {
+	width: 100%;
+	height: 5rem;
+	font-size: 1.5rem;
+	padding-left: 2rem;
+	margin-bottom: 2rem;
+	border-radius: 0.5rem;
+}
+
+#description {
+	width: 100%;
+	height: 10rem;
+	font-size: 1.5rem;
+	padding-left: 2rem;
+	margin-bottom: 2rem;
+	border-radius: 0.5rem;
+}
+
+/* end of main */
+
+/* end of detail page */
