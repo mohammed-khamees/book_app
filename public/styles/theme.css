@@ -140,3 +140,16 @@ footer ul li a {
 /* end of searches page */
 
 /* /////////////////////////////////////////////////////////////////////// */
+
+/* detail page */
+
+/* main */
+
+.update {
+	background-color: var(--mainColor);
+	color: var(--fifthColor);
+}
+
+/* end of main */
+
+/* end of detail page */
